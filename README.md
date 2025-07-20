@@ -22,7 +22,7 @@ The Dataset we used in the paper:
 </p><br><br>
 
 
-## Unsupervised Clustering Matrics Score
+## Unsupervised Clustering Metrics Score
 
 <p align="center">
   <img src="HYDRA/artifacts/RQ2 and RQ3/t-SNE-and-metrics-score-for-HYDRA/unsupervised-metrics-score.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/>
