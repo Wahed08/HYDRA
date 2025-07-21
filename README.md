@@ -14,7 +14,19 @@ HYDRA combines:
 1. **Heuristic Feature Extraction:** Encodes a set of expert defined vulnerability prediction rules derived from common insecure coding practices (e.g., missing null checks, unsafe memory allocation).
 2. **GraphCodeBERT Encoder:** A pretrained deep learning model specifically designed for source code, GraphCodeBERT transforms input functiones code into rich context-aware embeddings that capture both syntax (e.g., control/data flow) and semantics (e.g., variable interactions).
 3. **VAE-Based Latent Space Projection:** HYDRA uses a **Variational Autoencoder (VAE)** to compress high-dimensional code embeddings into a lower-dimensional latent space, making it easier to observe hidden structure in code representations.
-4. **K-Means Clustering:**  K-Means clustering is employed to reveal semantic groupings of patched functions, highlighting similarities across risky and "None" labeled examples and enabling unsupervised discovery of latent vulnerability signals.
+4. **K-Means Clustering:**  K-Means clustering is employed to reveal semantic groupings of patched functions, highlighting similarities across risky and "None" labeled examples and enabling unsupervised discovery of latent vulnerability signals. <br>
+
+## Environment Requirements
+- Python≥3.8
+- [Torch>=1.12](https://pytorch.org/)
+- [Transformers>=4.25](https://huggingface.co/transformers/)
+- NumPy
+- Pandas
+- Scikit-learn
+- Matplotlib
+- Seaborn
+- tqdm
+- re (regular expressions)
 
 ## Dataset
 
