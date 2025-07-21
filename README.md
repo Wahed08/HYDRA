@@ -5,7 +5,7 @@
 
 ## Architecture of HYDRA
 <p align="center">
-  <img src="HYDRA/figures/architecture.png" alt="t-SNE visualization of HYDRA embeddings" width="500"/>
+  <img src="figures/architecture.png" alt="t-SNE visualization of HYDRA embeddings" width="500"/>
 </p>
 
 ## HYDRA Framework Overview
@@ -35,32 +35,32 @@ The Dataset we used in the paper:
 1. **Big-Vul** [[https://drive.google.com/file/d/1-0VhnHBp9IGh90s2wCNjeCMuy70HPl8X/view?usp=sharing](https://drive.google.com/file/d/1-0VhnHBp9IGh90s2wCNjeCMuy70HPl8X/view?usp=sharing)]  
    A large dataset of known vulnerabilities with vulnerable and fixed code function pairs.<br>
 
-## [Code](./HYDRA//Code/)
+## [Code](./Code/)
 
 
-## [t-SNE Visualization of HYDRA](./HYDRA//artifacts//RQ2%20and%20RQ3/t-SNE-and-metrics-score-for-HYDRA/)
+## [t-SNE Visualization of HYDRA](./artifacts//RQ2%20and%20RQ3/t-SNE-and-metrics-score-for-HYDRA/)
 
 <p align="center">
-  <img src="HYDRA/artifacts/RQ2 and RQ3/t-SNE-and-metrics-score-for-HYDRA/chrome-t-SNE.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/><br>
-  <img src="HYDRA/artifacts/RQ2 and RQ3/t-SNE-and-metrics-score-for-HYDRA/android-t-SNE.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/><br>
-  <img src="HYDRA/artifacts/RQ2 and RQ3/t-SNE-and-metrics-score-for-HYDRA/imageMagick-t-SNE.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/>
+  <img src="artifacts/RQ2 and RQ3/t-SNE-and-metrics-score-for-HYDRA/chrome-t-SNE.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/><br>
+  <img src="artifacts/RQ2 and RQ3/t-SNE-and-metrics-score-for-HYDRA/android-t-SNE.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/><br>
+  <img src="artifacts/RQ2 and RQ3/t-SNE-and-metrics-score-for-HYDRA/imageMagick-t-SNE.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/>
 </p>
 
-## [t-SNE Visualization from Other Models](./HYDRA//artifacts//RQ2%20and%20RQ3/t-SNE-and-metrics-score-for-other-models/)
+## [t-SNE Visualization from Other Models](./artifacts//RQ2%20and%20RQ3/t-SNE-and-metrics-score-for-other-models/)
 
 
-## [Unsupervised Clustering Metrics Score of HYDRA](./HYDRA//artifacts//RQ2%20and%20RQ3/t-SNE-and-metrics-score-for-HYDRA/unsupervised-metrics-score.png)
+## [Unsupervised Clustering Metrics Score of HYDRA](./artifacts//RQ2%20and%20RQ3/t-SNE-and-metrics-score-for-HYDRA/unsupervised-metrics-score.png)
 
 <p align="center">
-  <img src="HYDRA/artifacts/RQ2 and RQ3/t-SNE-and-metrics-score-for-HYDRA/unsupervised-metrics-score.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/>
+  <img src="artifacts/RQ2 and RQ3/t-SNE-and-metrics-score-for-HYDRA/unsupervised-metrics-score.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/>
 </p>
 
-## [Unsupervised Clustering Metrics Score from Other Models](./HYDRA//artifacts//RQ2%20and%20RQ3/t-SNE-and-metrics-score-for-other-models/)
+## [Unsupervised Clustering Metrics Score from Other Models](./artifacts//RQ2%20and%20RQ3/t-SNE-and-metrics-score-for-other-models/)
 
-## [VAE Reconstruction Loss Curve of HYDRA](./HYDRA//artifacts//RQ2%20and%20RQ3/t-SNE-and-metrics-score-for-HYDRA/VAE-loss-curve-HYDRA.png)
+## [VAE Reconstruction Loss Curve of HYDRA](./artifacts//RQ2%20and%20RQ3/t-SNE-and-metrics-score-for-HYDRA/VAE-loss-curve-HYDRA.png)
 
 <p align="center">
-  <img src="HYDRA/artifacts/RQ2 and RQ3/t-SNE-and-metrics-score-for-HYDRA/VAE-loss-curve-HYDRA.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/>
+  <img src="artifacts/RQ2 and RQ3/t-SNE-and-metrics-score-for-HYDRA/VAE-loss-curve-HYDRA.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/>
 </p><br>
 
 
