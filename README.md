@@ -3,8 +3,6 @@
 
 **HYDRA** is a hybrid vulnerability analysis framework designed to uncover latent **zero-day vulnerabilities** in patched functions. It combines rule-based static analysis with deep learning techniques specifically, GraphCodeBERT embeddings and a Variational Autoencoder (VAE) to identify **"silent vulnerabilities"** that persist after fixes due to incomplete patches or overlooked risks. HYDRA operates in an **unsupervised** setting and was evaluated on three real-world projects **Chrome**, **Android**, and **ImageMagick** where it successfully predicted **13.7%**, **20.6%**, and **24%** of patched functions, respectively, as containing potential latent risks. HYDRA outperforms baselines using only regex-based or hybrid symbolic models by surfacing deeply buried but risky patterns strengthening the case for hybrid vulnerability prediction in security audits.<br><br>
 
-
-
 ## Dataset
 
 The Dataset we used in the paper:
@@ -26,7 +24,7 @@ The Dataset we used in the paper:
 
 <p align="center">
   <img src="HYDRA/artifacts/RQ2 and RQ3/t-SNE-and-metrics-score-for-HYDRA/unsupervised-metrics-score.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/>
-</p>
+</p><br><br>
 
 
 ## VAE Reconstruction Loss Curve
