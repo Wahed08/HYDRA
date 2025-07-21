@@ -35,7 +35,7 @@ The Dataset we used in the paper:
 1. **Big-Vul** [[https://drive.google.com/file/d/1-0VhnHBp9IGh90s2wCNjeCMuy70HPl8X/view?usp=sharing](https://drive.google.com/file/d/1-0VhnHBp9IGh90s2wCNjeCMuy70HPl8X/view?usp=sharing)]  
    A large dataset of known vulnerabilities with vulnerable and fixed code function pairs.<br>
 
-## [Code](./Code/)
+## [Code](./code/)
 
 
 ## [t-SNE Visualization of HYDRA](./artifacts//RQ2%20and%20RQ3/t-SNE-and-metrics-score-for-HYDRA/)
