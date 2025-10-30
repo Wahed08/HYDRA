@@ -1,3 +1,52 @@
+#H_Rule-1
+def missing_null_check_func(code):
+    functions = re.findall(r'\b\w+\s+\w+\s*\([^)]*\)\s*\{[^{}]*\}', code, re.DOTALL)
+    for func in functions:
+        ptr_decl = re.findall(r'\b\w+\s*\*\s*(\w+)\s*=\s*[^;]+;', func)
+        ptr_func_decl = re.findall(r'\b\w+\s*\*\s*(\w+)\s*;', func)
+        ptr_vars = list(set(ptr_decl + ptr_func_decl))
+        for ptr in ptr_vars:
+            unsafe_use = re.search(rf'[^a-zA-Z0-9_]({ptr})(->|\[\d*]|[^\w]?\*)|\b{ptr}\s*\(', func)
+            if not unsafe_use:
+                continue
+            null_check = re.search(rf'if\s*\(\s*(!\s*{ptr}|{ptr}\s*==\s*NULL|{ptr}\s*!=\s*NULL)\s*\)', func)
+            if not null_check:
+                return 1
+    return 0
+
+
+#H_Rule-2
+def detect_race_condition(code: str) -> bool:
+    field_assignment_pattern = r'\b\w+\s*(->|\.)\s*\w+\s*=.*?;'
+    control_block_pattern = r'\b(if|while|for|switch)\s*\([^\)]+\)\s*{[^}]*' + field_assignment_pattern + r'[^}]*}'
+    matches_control_blocks = re.findall(control_block_pattern, code, re.DOTALL)
+    locking_primitive_pattern = r'\b(mutex_lock|pthread_mutex_lock|spin_lock)\b'
+    unlocking_primitive_pattern = r'\b(mutex_unlock|pthread_mutex_unlock|spin_unlock)\b'
+    has_locking = re.search(locking_primitive_pattern, code)
+    has_unlocking = re.search(unlocking_primitive_pattern, code)
+    if matches_control_blocks and not (has_locking and has_unlocking):
+        return True
+    return False
+
+
+def split_into_functions(code):
+    functions = re.findall(r'([a-zA-Z_][a-zA-Z0-9_\*\s]*\s+[a-zA-Z_][a-zA-Z0-9_]*\s*\(.*?\)\s*\{.*?\})', code, re.DOTALL)
+    return functions
+
+
+#H_Rule-3
+def missing_bounds_check(code):
+    functions = split_into_functions(code)
+    risky_keywords = ['recv', 'read', 'strcpy', 'memcpy', 'gets', 'strcat', 'write']
+    for func in functions:
+        found_risky = any(kw in func for kw in risky_keywords)
+        has_check = any('if' in line and ('<' in line or '>' in line or '<=' in line or '>=' in line) for line in func.splitlines())
+        if found_risky and not has_check:
+            return 1
+    return 0
+
+
+#H_Rule-4
 def detect_missing_malloc_check(code: str) -> int:
     alloc_pattern = r'\b(\w+)\s*\*\s*(\w+)\s*=\s*\([^\)]*\)\s*(malloc|calloc|realloc)\s*\([^;]+?\);|\b(\w+)\s*\*\s*(\w+)\s*=\s*(malloc|calloc|realloc)\s*\([^;]+?\);'
     matches = re.findall(alloc_pattern, code)
@@ -19,33 +68,8 @@ def detect_missing_malloc_check(code: str) -> int:
             return 1
     return 0
 
-def missing_null_check_func(code):
-    functions = re.findall(r'\b\w+\s+\w+\s*\([^)]*\)\s*\{[^{}]*\}', code, re.DOTALL)
-    for func in functions:
-        ptr_decl = re.findall(r'\b\w+\s*\*\s*(\w+)\s*=\s*[^;]+;', func)
-        ptr_func_decl = re.findall(r'\b\w+\s*\*\s*(\w+)\s*;', func)
-        ptr_vars = list(set(ptr_decl + ptr_func_decl))
-        for ptr in ptr_vars:
-            unsafe_use = re.search(rf'[^a-zA-Z0-9_]({ptr})(->|\[\d*]|[^\w]?\*)|\b{ptr}\s*\(', func)
-            if not unsafe_use:
-                continue
-            null_check = re.search(rf'if\s*\(\s*(!\s*{ptr}|{ptr}\s*==\s*NULL|{ptr}\s*!=\s*NULL)\s*\)', func)
-            if not null_check:
-                return 1
-    return 0
 
-def detect_race_condition(code: str) -> bool:
-    field_assignment_pattern = r'\b\w+\s*(->|\.)\s*\w+\s*=.*?;'
-    control_block_pattern = r'\b(if|while|for|switch)\s*\([^\)]+\)\s*{[^}]*' + field_assignment_pattern + r'[^}]*}'
-    matches_control_blocks = re.findall(control_block_pattern, code, re.DOTALL)
-    locking_primitive_pattern = r'\b(mutex_lock|pthread_mutex_lock|spin_lock)\b'
-    unlocking_primitive_pattern = r'\b(mutex_unlock|pthread_mutex_unlock|spin_unlock)\b'
-    has_locking = re.search(locking_primitive_pattern, code)
-    has_unlocking = re.search(unlocking_primitive_pattern, code)
-    if matches_control_blocks and not (has_locking and has_unlocking):
-        return True
-    return False
-
+#H_Rule-5
 def logging_but_no_blocking(code):
     log_lines = re.findall(r'(syslog\([^)]*\)|printk\([^)]*\))', code)
     for line in log_lines:
@@ -55,19 +79,6 @@ def logging_but_no_blocking(code):
             return 1
     return 0
 
-def split_into_functions(code):
-    functions = re.findall(r'([a-zA-Z_][a-zA-Z0-9_\*\s]*\s+[a-zA-Z_][a-zA-Z0-9_]*\s*\(.*?\)\s*\{.*?\})', code, re.DOTALL)
-    return functions
-
-def missing_bounds_check(code):
-    functions = split_into_functions(code)
-    risky_keywords = ['recv', 'read', 'strcpy', 'memcpy', 'gets', 'strcat', 'write']
-    for func in functions:
-        found_risky = any(kw in func for kw in risky_keywords)
-        has_check = any('if' in line and ('<' in line or '>' in line or '<=' in line or '>=' in line) for line in func.splitlines())
-        if found_risky and not has_check:
-            return 1
-    return 0
 
 def analyze_risks(code):
     risk_flags = {
