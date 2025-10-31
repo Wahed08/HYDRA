@@ -58,7 +58,7 @@ The Dataset we used in the paper:
 
 ## [Unsupervised Clustering Metrics Score from Other Models](./artifacts/RQ2-&-RQ3/t-SNE_&_metrics-Models%20M1_M2_M3/)
 
-## [VAE Reconstruction Loss Curve of HYDRA](./artifacts//RQ2%20and%20RQ3/t-SNE-and-metrics-score-for-HYDRA/VAE-loss-curve-HYDRA.png)
+## [VAE Reconstruction Loss Curve of HYDRA](./artifacts/RQ2-&-RQ3/t-SNE_&_metrics-Model%20HYDRA/VAE-loss-curve-HYDRA.png)
 
 <p align="center">
   <img src="artifacts/RQ2-&-RQ3/t-SNE_&_metrics-Model HYDRA/VAE-loss-curve-HYDRA.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/>
