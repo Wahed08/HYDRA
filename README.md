@@ -39,29 +39,29 @@ The Dataset we used in the paper:
 ## [Code](./code/)
 
 
-## [t-SNE Visualization of HYDRA](./artifacts//RQ2%20and%20RQ3/t-SNE-and-metrics-score-for-HYDRA/)
+## [t-SNE Visualization of HYDRA](./artifacts/RQ2-&-RQ3/t-SNE_&_metrics-Model%20HYDRA/)
 
 <p align="center">
-  <img src="artifacts/RQ2 and RQ3/t-SNE-and-metrics-score-for-HYDRA/chrome-t-SNE.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/><br>
-  <img src="artifacts/RQ2 and RQ3/t-SNE-and-metrics-score-for-HYDRA/android-t-SNE.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/><br>
-  <img src="artifacts/RQ2 and RQ3/t-SNE-and-metrics-score-for-HYDRA/imageMagick-t-SNE.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/>
+  <img src="artifacts/RQ2-&-RQ3/t-SNE_&_metrics-Model HYDRA/chrome-t-SNE.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/><br>
+  <img src="artifacts/RQ2-&-RQ3/t-SNE_&_metrics-Model HYDRA/android-t-SNE.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/><br>
+  <img src="artifacts/RQ2-&-RQ3/t-SNE_&_metrics-Model HYDRA/imageMagick-t-SNE.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/>
 </p>
 
-## [t-SNE Visualization from Other Models](./artifacts//RQ2%20and%20RQ3/t-SNE-and-metrics-score-for-other-models/)
+## [t-SNE Visualization from Other Models](./artifacts/RQ2-&-RQ3/t-SNE_&_metrics-Models%20M1_M2_M3/)
 
 
-## [Unsupervised Clustering Metrics Score of HYDRA](./artifacts//RQ2%20and%20RQ3/t-SNE-and-metrics-score-for-HYDRA/unsupervised-metrics-score.png)
+## [Unsupervised Clustering Metrics Score of HYDRA](./artifacts/RQ2-&-RQ3/t-SNE_&_metrics-Model%20HYDRA/unsupervised-metrics-score.png)
 
 <p align="center">
-  <img src="artifacts/RQ2 and RQ3/t-SNE-and-metrics-score-for-HYDRA/unsupervised-metrics-score.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/>
+  <img src="artifacts/RQ2-&-RQ3/t-SNE_&_metrics-Model HYDRA/unsupervised-metrics-score.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/>
 </p>
 
-## [Unsupervised Clustering Metrics Score from Other Models](./artifacts//RQ2%20and%20RQ3/t-SNE-and-metrics-score-for-other-models/)
+## [Unsupervised Clustering Metrics Score from Other Models](./artifacts/RQ2-&-RQ3/t-SNE_&_metrics-Models%20M1_M2_M3/)
 
 ## [VAE Reconstruction Loss Curve of HYDRA](./artifacts//RQ2%20and%20RQ3/t-SNE-and-metrics-score-for-HYDRA/VAE-loss-curve-HYDRA.png)
 
 <p align="center">
-  <img src="artifacts/RQ2 and RQ3/t-SNE-and-metrics-score-for-HYDRA/VAE-loss-curve-HYDRA.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/>
+  <img src="artifacts/RQ2-&-RQ3/t-SNE_&_metrics-Model HYDRA/VAE-loss-curve-HYDRA.png" alt="t-SNE visualization of HYDRA embeddings" width="700"/>
 </p><br>
 
 
